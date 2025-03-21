@@ -7,6 +7,8 @@
     "declarations.d.ts"
   ],
   "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true, //отключает проверку типов в файлах, находящихся в node_modules
     "target": "es6",
     "module": "esnext",
     "jsx": "react-jsx",  // добавь эту строку
@@ -15,6 +17,7 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+    "types": ["vite-plugin-svgr/client"]
   },
 }
