@@ -7,9 +7,8 @@ function App() {
         <Header/>
         <main>основная часть</main>
       </>
-  )
+  );
 }
 
-export default App
-
+export default App;
 
