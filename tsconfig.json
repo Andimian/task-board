@@ -7,6 +7,7 @@
     "declarations.d.ts"
   ],
   "compilerOptions": {
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true, //отключает проверку типов в файлах, находящихся в node_modules
     "target": "es6",

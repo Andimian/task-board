@@ -1,21 +1,37 @@
+import { Day } from '@/entities/shedule';
+import { DayKey } from '@/entities/shedule/model/constants';
+import { v4 as uuidv4 } from 'uuid';
+
 export const getDayName = (date: string): string => {
 	return new Date(date).toLocaleDateString('ru-RU', { weekday: 'long' });
 };
 
-export function getCurrentWeekRange() {
+const dayOrder: DayKey[] = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+
+export function getCurrentWeekRange(): Day[] {
 	const currentDate = new Date();
-	const dayOfWeek = currentDate.getDay(); // День недели (0 - воскресенье, 1 - понедельник и т.д.)
+	const dayOfWeek = currentDate.getDay(); // 0 (Sun) - 6 (Sat)
+	const diffToMonday = dayOfWeek === 0 ? -6 : 1 - dayOfWeek;
 
-	// Получаем начало недели (понедельник)
 	const startOfWeek = new Date(currentDate);
-	startOfWeek.setDate(currentDate.getDate() - dayOfWeek + (dayOfWeek === 0 ? -6 : 1));
+	startOfWeek.setDate(currentDate.getDate() + diffToMonday);
 
-	// Получаем конец недели (воскресенье)
-	const endOfWeek = new Date(startOfWeek);
-	endOfWeek.setDate(startOfWeek.getDate() + 6);
+	const days: Day[] = [];
 
-	return {
-		startOfWeek,
-		endOfWeek
-	};
+	for (let i = 0; i < 7; i++) {
+		const date = new Date(startOfWeek);
+		date.setDate(startOfWeek.getDate() + i);
+
+		const name = dayOrder[i]; // гарантирован DayKey
+		const isoDate = date.toISOString().split('T')[0];
+
+		days.push({
+			id: uuidv4(),
+			date: isoDate,
+			name,
+			tasks: [],
+		});
+	}
+
+	return days;
 }

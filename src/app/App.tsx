@@ -1,16 +1,16 @@
-import {Header} from "@/widgets/header/ui/Header";
-import {Day, getCurrentWeekRange, Week} from "@/entities/shedule";
+import { Header } from "@/widgets/header/ui/Header";
+import { Day, getCurrentWeekRange, Week } from "@/entities/shedule";
 
 function App() {
 // Получить текущую неделю
-    const week: Day[] = getCurrentWeekRange();
+	const week: Day[] = getCurrentWeekRange();
 
-  return (
-      <>
-        <Header/>
-        <Week/>
-      </>
-  );
+	return (
+		<>
+			<Header/>
+			<Week week={week} />
+		</>
+	);
 }
 
 export default App;
