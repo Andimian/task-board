@@ -1,12 +1,16 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-import path from 'path';
+import react from '@vitejs/plugin-react-swc';
+import {defineConfig} from 'vite';
+import * as path from 'path';
+import svgr from 'vite-plugin-svgr';
 
 export default defineConfig({
-  plugins: [react()],
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, 'src'), // Устанавливаем алиас "@" на папку src
-    },
-  },
+	plugins: [
+		react(),
+		svgr(),
+	],
+	resolve: {
+		alias: {
+			'@': path.resolve(__dirname, 'src'), // Устанавливаем алиас "@" на папку src
+		},
+	},
 });
