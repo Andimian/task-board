@@ -7,7 +7,7 @@ type Props = {
 export const DayCard = ({ day }: Props) => (
 	<div>
 		<h3>{day.name}</h3>
-		<button onClick={() => console.log('перекинь меня в день')}>Подробнее</button>
+		<button onClick={() => console.log('перекинь меня в задачи дня')}>Подробнее</button>
 		{day.tasks.slice(0, 3).map((task) => (
 			<div key={task.id}>{task.title}</div>
 		))}
