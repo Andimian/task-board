@@ -11,7 +11,6 @@ export const Header = () => {
 
                 <div className={`${styles.header__buttons}`}>
                     <AuthIcon />
-
                     <WeekSwitcher />
                 </div>
             </div>
