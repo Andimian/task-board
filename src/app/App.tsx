@@ -1,5 +1,5 @@
 import { Header } from "@/widgets/header/ui/Header";
-import { Day, getCurrentWeekRange, Week } from "@/entities/shedule";
+import { Day, getCurrentWeekRange, Schedule } from "@/entities/shedule";
 
 function App() {
 	// Получить текущую неделю
@@ -8,7 +8,7 @@ function App() {
 	return (
 		<>
 			<Header/>
-			<Week week={week} />
+			<Schedule week={week} />
 		</>
 	);
 }

@@ -45,6 +45,8 @@ export default [
       'space-in-parens': ['error', 'never'],
       'array-bracket-spacing': ['error', 'never'],
       'no-multiple-empty-lines': ['error', { max: 1 }],
+      'quotes': ['error', 'single', { 'avoidEscape': true, 'allowTemplateLiterals': true }],
+      'jsx-quotes': ['error', 'prefer-double'],
       ...pluginHooks.configs.recommended.rules,
     },
   },

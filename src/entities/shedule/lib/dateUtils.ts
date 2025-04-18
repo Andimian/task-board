@@ -8,22 +8,29 @@ export const getDayName = (date: string): string => {
 
 const dayOrder: DayKey[] = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
-export function getCurrentWeekRange(): Day[] {
-	const currentDate = new Date();
-	const dayOfWeek = currentDate.getDay(); // 0 (Sun) - 6 (Sat)
+/**
+ * Генератор недели (с понедельника по воскресенье), которая включает указанную дату.
+ * Если дата не передана — используется текущая дата.
+ * @param date Опциональная дата в формате ISO (YYYY-MM-DD) или объект Date.
+ */
+export function getCurrentWeekRange(date?: string | Date): Day[] {
+	const baseDate = date ? new Date(date) : new Date();
+
+	const dayOfWeek = baseDate.getDay(); // 0 (Sun) - 6 (Sat)
+	console.log(dayOfWeek);
 	const diffToMonday = dayOfWeek === 0 ? -6 : 1 - dayOfWeek;
 
-	const startOfWeek = new Date(currentDate);
-	startOfWeek.setDate(currentDate.getDate() + diffToMonday);
+	const startOfWeek = new Date(baseDate);
+	startOfWeek.setDate(baseDate.getDate() + diffToMonday);
 
 	const days: Day[] = [];
 
 	for (let i = 0; i < 7; i++) {
-		const date = new Date(startOfWeek);
-		date.setDate(startOfWeek.getDate() + i);
+		const current = new Date(startOfWeek);
+		current.setDate(startOfWeek.getDate() + i);
 
 		const name = dayOrder[i]; // гарантирован DayKey
-		const isoDate = date.toISOString().split('T')[0];
+		const isoDate = current.toISOString().split('T')[0];
 
 		days.push({
 			id: uuidv4(),
