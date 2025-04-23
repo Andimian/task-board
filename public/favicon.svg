@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+    <!-- Внешняя рамка -->
+    <rect x="1" y="1" width="62" height="62" rx="8" fill="none" stroke="bisque" stroke-width="2"/>
+
+    <!-- верхняя панель -->
+    <rect x="1" y="1" width="62" height="12" rx="4" fill="bisque"/>
+
+    <!-- Кольца -->
+    <circle cx="16" cy="7" r="2" fill="black"/>
+    <circle cx="48" cy="7" r="2" fill="black"/>
+
+    <!-- Внутренние линии (текстовые строки) -->
+    <line x1="10" y1="26" x2="54" y2="26" stroke="bisque" stroke-width="2"/>
+    <line x1="10" y1="36" x2="54" y2="36" stroke="bisque" stroke-width="2"/>
+    <line x1="10" y1="46" x2="54" y2="46" stroke="bisque" stroke-width="2"/>
+</svg>

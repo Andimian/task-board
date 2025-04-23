@@ -1,4 +1,4 @@
-import { Header } from "@/widgets/header/ui/Header";
+import { Header } from '@/widgets/header/ui/Header';
 import { Day, getCurrentWeekRange, Schedule } from "@/entities/shedule";
 
 function App() {

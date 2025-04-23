@@ -15,7 +15,7 @@ export const Schedule = ({ week }: Props) => {
 	const weekends = week.slice(5, 7); // Вс
 	return (
 		<div className="container">
-			<div className={styles.row}>
+			<div className={styles.header_content}>
 				{weekdays.map((day) => (
 					<DayCard key={day.id} day={day}/>
 				))}
