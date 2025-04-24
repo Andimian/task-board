@@ -1,5 +1,5 @@
 import { Day } from '../../model/types';
-import { DayCard } from '../DayCard';
+import { DayCard } from '../DayCard/DayCard';
 import styles from './schedule.module.scss';
 
 type Props = {
@@ -15,16 +15,26 @@ export const Schedule = ({ week }: Props) => {
 	const weekends = week.slice(5, 7); // Вс
 	return (
 		<div className="container">
-			<div className={styles.header_content}>
-				{weekdays.map((day) => (
-					<DayCard key={day.id} day={day}/>
-				))}
-			</div>
+			<div className={styles.schedule}>
+				<div className={styles.schedule_workingDays}>
+					{weekdays.map((day) => (
+						<DayCard key={day.id} day={day}/>
+					))}
+				</div>
 
-			<div className={styles.row}>
-				{weekends.map((day) => (
-					<DayCard key={day.id} day={day}/>
-				))}
+				<div className={styles.schedule_extraDays}>
+					<div className={styles.schedule_weekends}>
+						{weekends.map((day) => (
+							<DayCard key={day.id} day={day}/>
+						))}
+					</div>
+
+					{/* Блок когда-нибудь */}
+					<div>
+						<h3>Когда-нибудь</h3>
+						<button onClick={() => console.log('перекинь меня в задачи дня')}>Подробнее</button>
+					</div>
+				</div>
 			</div>
 		</div>
 	);

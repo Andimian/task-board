@@ -6,7 +6,7 @@ export const getDayName = (date: string): string => {
 	return new Date(date).toLocaleDateString('ru-RU', { weekday: 'long' });
 };
 
-const dayOrder: DayKey[] = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+const dayOrder: DayKey[] = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
 
 /**
  * Генератор недели (с понедельника по воскресенье), которая включает указанную дату.
@@ -17,7 +17,6 @@ export function getCurrentWeekRange(date?: string | Date): Day[] {
 	const baseDate = date ? new Date(date) : new Date();
 
 	const dayOfWeek = baseDate.getDay(); // 0 (Sun) - 6 (Sat)
-	console.log(dayOfWeek);
 	const diffToMonday = dayOfWeek === 0 ? -6 : 1 - dayOfWeek;
 
 	const startOfWeek = new Date(baseDate);

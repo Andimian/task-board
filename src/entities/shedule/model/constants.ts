@@ -1,29 +1,29 @@
 export const DayNames = {
-	Mon: {
+	Пн: {
 		short: 'Пн.',
 		full: 'Понедельник',
 	},
-	Tue: {
+	Вт: {
 		short: 'Вт.',
 		full: 'Вторник',
 	},
-	Wed: {
+	Ср: {
 		short: 'Ср.',
 		full: 'Среда',
 	},
-	Thu: {
+	Чт: {
 		short: 'Чт.',
 		full: 'Четверг',
 	},
-	Fri: {
+	Пт: {
 		short: 'Пт.',
 		full: 'Пятница',
 	},
-	Sat: {
+	Сб: {
 		short: 'Сб.',
 		full: 'Суббота',
 	},
-	Sun: {
+	Вс: {
 		short: 'Вс.',
 		full: 'Воскресенье',
 	},

@@ -1,7 +1,27 @@
-.header_content {
-  color: bisque;
+.schedule {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
 }
 
-.sunday {
+.schedule_workingDays {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	width: 100%;
+	& > * {
+		margin-right: 20px;
 
+		// Убираем отступ у последнего элемента в ряду
+		&:nth-child(n):nth-last-child(-n + 1) {
+			margin-right: 0;
+		}
+	}
+}
+
+.schedule_weekends {
+	display: flex;
+}
+
+.schedule_extraDays {
+	display: flex;
 }
